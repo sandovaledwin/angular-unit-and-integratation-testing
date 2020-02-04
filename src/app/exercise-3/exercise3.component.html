@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-title>Form</mat-card-title>
+  <mat-card-subtitle>With Custom Validation</mat-card-subtitle>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Name:" [(ngModel)]="customer.name" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Last name:" [(ngModel)]="customer.last_name" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Address" [(ngModel)]="customer.address">
+Col. Chapalita, Tepeyac #1010
+    </textarea>
+  </mat-form-field>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="City" [(ngModel)]="customer.city" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="State" [(ngModel)]="customer.state" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input
+            matInput
+            maxlength="5"
+            placeholder="Postal Code"
+            [(ngModel)]="customer.zip"
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</mat-card>

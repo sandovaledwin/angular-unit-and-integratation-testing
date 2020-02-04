@@ -1,0 +1,11 @@
+label {
+  display: block;
+}
+
+.selected {
+  background-color: #b8e1ff;
+}
+
+.example-full-width {
+  width: 100%;
+}

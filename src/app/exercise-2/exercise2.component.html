@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-title>Simple Calculator</mat-card-title>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Type a Number:" [(ngModel)]="currentVal" />
+  </mat-form-field>
+  <button
+    mat-stroked-button
+    (click)="sum()"
+    [ngClass]="{'selected': this.operation === '+'}"
+  >
+    Sum
+  </button>
+  <button
+    mat-stroked-button
+    (click)="subs()"
+    [ngClass]="{'selected': this.operation === '-'}"
+  >
+    Subs
+  </button>
+  <button
+    mat-stroked-button
+    (click)="mul()"
+    [ngClass]="{'selected': this.operation === '*'}"
+  >
+    Mul
+  </button>
+  <button
+    mat-stroked-button
+    (click)="div()"
+    [ngClass]="{'selected': this.operation === '/'}"
+  >
+    Div
+  </button>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Total:" [(ngModel)]="total" />
+  </mat-form-field>
+  <button mat-stroked-button (click)="add(currentVal)">
+    &crarr;
+  </button>
+  <button mat-stroked-button (click)="reset()">
+    Reset
+  </button>
+</mat-card>

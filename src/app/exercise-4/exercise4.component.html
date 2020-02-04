@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>{{title}}</mat-card-title>
+  <mat-card-subtitle>{{subTitle}}</mat-card-subtitle>
+  <mat-card *ngFor="let planet of starWarsPlanets">
+    <mat-card-title>{{planet.name}}</mat-card-title>
+    <mat-card-subtitle>
+      Diameter: {{planet.diameter}} | Population: {{planet.population}}
+    </mat-card-subtitle>
+    <mat-chip-list>
+      Terrain:
+      <mat-chip *ngFor="let terrain of planet.terrain.split(', ')">
+        {{terrain}}
+      </mat-chip>
+    </mat-chip-list>
+  </mat-card>
+</mat-card>
