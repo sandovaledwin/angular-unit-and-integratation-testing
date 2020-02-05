@@ -1,6 +1,6 @@
 import { Exercise3Component } from "./exercise3.component";
 
-describe("Form - Custom Validation - ", () => {
+describe("Form - Custom Validation", () => {
   let comp: Exercise3Component;
 
   beforeAll(() => {

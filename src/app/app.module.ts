@@ -15,12 +15,15 @@ import { Exercise1Component } from "./exercise-1/exercise1.component";
 import { Exercise2Component } from "./exercise-2/exercise2.component";
 import { Exercise3Component } from "./exercise-3/exercise3.component";
 import { Exercise4Component } from "./exercise-4/exercise4.component";
+import { Exercise5Component } from "./exercise-5/exercise5.component";
+import { FirstLetterUpperCasePipe } from './exercise-5/first-letter-upper-case.pipe';
 
 const routes: Routes = [
   { path: "exercise-1", component: Exercise1Component },
   { path: "exercise-2", component: Exercise2Component },
   { path: "exercise-3", component: Exercise3Component },
-  { path: "exercise-4", component: Exercise4Component }
+  { path: "exercise-4", component: Exercise4Component },
+  { path: "exercise-5", component: Exercise5Component }
 ];
 
 @NgModule({
@@ -29,7 +32,9 @@ const routes: Routes = [
     Exercise1Component,
     Exercise2Component,
     Exercise3Component,
-    Exercise4Component
+    Exercise4Component,
+    Exercise5Component,
+    FirstLetterUpperCasePipe
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,6 +1,6 @@
 import { Exercise2Component } from "./exercise2.component";
 
-describe("Simple Calculator - ", () => {
+describe("Simple Calculator", () => {
   let comp: Exercise2Component;
 
   beforeEach(() => {
