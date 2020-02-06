@@ -16,6 +16,10 @@ import { Exercise2Component } from "./exercise-2/exercise2.component";
 import { Exercise3Component } from "./exercise-3/exercise3.component";
 import { Exercise4Component } from "./exercise-4/exercise4.component";
 import { Exercise5Component } from "./exercise-5/exercise5.component";
+import { Exercise6Component } from "./exercise-6/exercise6.component";
+
+import { Exercise6Service } from "./exercise-6/exercise6.service";
+
 import { FirstLetterUpperCasePipe } from './exercise-5/first-letter-upper-case.pipe';
 
 const routes: Routes = [
@@ -23,7 +27,8 @@ const routes: Routes = [
   { path: "exercise-2", component: Exercise2Component },
   { path: "exercise-3", component: Exercise3Component },
   { path: "exercise-4", component: Exercise4Component },
-  { path: "exercise-5", component: Exercise5Component }
+  { path: "exercise-5", component: Exercise5Component },
+  { path: "exercise-6", component: Exercise6Component }
 ];
 
 @NgModule({
@@ -34,6 +39,7 @@ const routes: Routes = [
     Exercise3Component,
     Exercise4Component,
     Exercise5Component,
+    Exercise6Component,
     FirstLetterUpperCasePipe
   ],
   imports: [
@@ -48,7 +54,7 @@ const routes: Routes = [
     MatToolbarModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [Exercise6Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
