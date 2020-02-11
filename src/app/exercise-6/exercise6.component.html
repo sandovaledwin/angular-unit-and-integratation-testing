@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>Customers List</mat-card-title>
+  <mat-card-subtitle>CRUD example</mat-card-subtitle>
+
+  <login
+    *ngIf="!authService.isLogin">
+  </login>
+
+  <customer-form
+    *ngIf="authService.isLogin && (authService.page === 'add-customer' || authService.page === 'edit-customer')"
+    [customer]="authService.customer">
+  </customer-form>
+
+  <customers
+    *ngIf="authService.isLogin && authService.page === 'list-customers'"
+    [customers]="authService.customers"
+    [columnNames]="authService.displayedColumns">
+  </customers>
+
+</mat-card>

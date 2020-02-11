@@ -1,0 +1,7 @@
+.addNewCustomer {
+  display: flex;
+  justify-content: flex-end;
+}
+.customersList {
+  width: 100%;
+}

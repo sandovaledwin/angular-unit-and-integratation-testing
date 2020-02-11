@@ -1,0 +1,65 @@
+<mat-card>
+  <mat-card-title>{{ action }} Customer</mat-card-title>
+  <mat-card-subtitle *ngIf="error" class="errorMessage">
+    Error: {{error.message}}
+  </mat-card-subtitle>
+  <form [formGroup]="myForm" class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput
+        placeholder="Email:"
+        formControlName="email"
+        [errorStateMatcher]="matcher" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput
+        placeholder="Name:"
+        formControlName="name"
+        [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="myForm.controls.name.invalid">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput
+        placeholder="Last Name:"
+        formControlName="last_name"
+        [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="myForm.controls.last_name.invalid">
+        Last Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput
+        placeholder="Gender:"
+        formControlName="gender"
+        [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="myForm.controls.gender.invalid">
+        Gender is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput
+        placeholder="Mobile:"
+        formControlName="mobile"
+        [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="myForm.controls.mobile.invalid">
+        Mobile is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput
+        placeholder="Status:"
+        formControlName="status"
+        [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="myForm.controls.status.invalid">
+        Status is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="save()">
+      Save
+    </button>
+    <button mat-stroked-button (mousedown)="cancel()">
+      Cancel
+    </button>
+  </form>
+</mat-card>

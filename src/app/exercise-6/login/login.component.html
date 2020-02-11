@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-title>Autentification Form</mat-card-title>
+  <mat-card-subtitle *ngIf="error" class="errorMessage">
+    Error: {{error.message}}
+  </mat-card-subtitle>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput
+        placeholder="Email:"
+        [formControl]="email"
+        [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput
+        type="password"
+        placeholder="Password:"
+        [formControl]="password"
+        [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="password.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <button mat-stroked-button (click)="login()">
+      Login
+    </button>
+  </form>
+</mat-card>
