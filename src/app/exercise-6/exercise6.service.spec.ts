@@ -15,10 +15,8 @@ describe("Service - ", () => {
     status: ''
   };
 
-  const input = [];
-
   const data = new Observable(subscriber => {
-    subscriber.next(input);
+    subscriber.next([]);
   });
 
   const saveStub = new Promise((resolve, reject) => {
@@ -53,8 +51,6 @@ describe("Service - ", () => {
     }
   }
 
-  //auth.signInWithEmailAndPassword(email, password);
-
   beforeEach(() => {
 
     TestBed.configureTestingModule({
@@ -84,7 +80,6 @@ describe("Service - ", () => {
   });
 
   it('successfully called login()', () => {
-    console.log(service);
     service.login(customer.email, '');
     expect(angularFireAuthStub.auth.signInWithEmailAndPassword).toHaveBeenCalled();
   });
