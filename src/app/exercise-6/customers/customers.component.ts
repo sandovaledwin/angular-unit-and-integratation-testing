@@ -11,7 +11,7 @@ export class CustomersComponent {
   @Input() customers;
   @Input() columnNames;
 
-  constructor(private authService: Exercise6Service) { }
+  constructor(public authService: Exercise6Service) { }
 
   add() {
     this.authService.page = 'add-customer';
