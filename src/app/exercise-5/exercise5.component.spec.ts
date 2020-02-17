@@ -28,7 +28,7 @@ describe("Implementing Pipes in Components - ", () => {
   it("Transform -> welcome everyone -> Welcome Everyone", () => {
     fixture.detectChanges();
     htmlElement = fixture.nativeElement.querySelector("input");
-    htmlElement.value = 'Welcome Everyone';
+    htmlElement.value = 'welcome everyone';
     htmlElement.dispatchEvent(new Event('input'));
     fixture.detectChanges();
     htmlElement = fixture.nativeElement.querySelector("mat-card-content");

@@ -6,12 +6,14 @@
   <form [formGroup]="myForm" class="example-form">
     <mat-form-field class="example-full-width">
       <input matInput
+        name="email"
         placeholder="Email:"
         formControlName="email"
         [errorStateMatcher]="matcher" />
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <input matInput
+        name="name"
         placeholder="Name:"
         formControlName="name"
         [errorStateMatcher]="matcher" />
@@ -21,6 +23,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <input matInput
+        name="last_name"
         placeholder="Last Name:"
         formControlName="last_name"
         [errorStateMatcher]="matcher" />
@@ -30,6 +33,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <input matInput
+        name="gender"
         placeholder="Gender:"
         formControlName="gender"
         [errorStateMatcher]="matcher" />
@@ -39,6 +43,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <input matInput
+        name="mobile"
         placeholder="Mobile:"
         formControlName="mobile"
         [errorStateMatcher]="matcher" />
@@ -48,6 +53,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <input matInput
+        name="status"
         placeholder="Status:"
         formControlName="status"
         [errorStateMatcher]="matcher" />

@@ -13,7 +13,7 @@ export class CustomerFormComponent {
   @Input() customer;
 
   myForm = new FormGroup({
-    email: new FormControl({value: ''}, [Validators.email]),
+    email: new FormControl('', [Validators.email]),
     name: new FormControl('', [Validators.required]),
     last_name: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),
@@ -21,7 +21,7 @@ export class CustomerFormComponent {
     status: new FormControl('', [Validators.required])
   });
 
-  constructor(private authService: Exercise6Service) { }
+  constructor(public authService: Exercise6Service) { }
 
   ngOnChanges(value: SimpleChanges) {
     this.myForm.setValue(value.customer.currentValue);
