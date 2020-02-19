@@ -11,6 +11,9 @@
         formControlName="email"
         [errorStateMatcher]="matcher" />
     </mat-form-field>
+    <mat-error *ngIf="myForm.controls.email.invalid && myForm.controls.email.touched">
+      Email is <strong>required</strong>
+    </mat-error>
     <mat-form-field class="example-full-width">
       <input matInput
         name="name"

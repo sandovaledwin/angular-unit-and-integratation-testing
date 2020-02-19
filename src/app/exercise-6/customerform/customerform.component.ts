@@ -12,8 +12,10 @@ export class CustomerFormComponent {
 
   @Input() customer;
 
+  matcher = new MyErrorStateMatcher();
+
   myForm = new FormGroup({
-    email: new FormControl('', [Validators.email]),
+    email: new FormControl('', [Validators.email, Validators.required]),
     name: new FormControl('', [Validators.required]),
     last_name: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),

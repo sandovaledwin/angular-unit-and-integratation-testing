@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Exercise6Service } from '../exercise6.service';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'customers',
