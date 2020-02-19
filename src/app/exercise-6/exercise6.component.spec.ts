@@ -1,5 +1,6 @@
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore } from 'angularfire2/firestore';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { CustomerFormComponent } from "./customerform/customerform.component";
 import { CustomersComponent } from "./customers/customers.component";
@@ -63,6 +64,7 @@ describe("Exercise6Component -", () => {
         LoginComponent
       ],
       imports: [
+        BrowserAnimationsModule,
         FormsModule,
         MatCardModule,
         MatIconModule,
@@ -95,8 +97,8 @@ describe("Exercise6Component -", () => {
     expect(htmlElement.textContent).toContain('CRUD example');
   });
 
-  it("is the customers component there?", () => {
-    expect(fixture.debugElement.childNodes[0]['childNodes'][5].name).toContain('customers');
+  it("is the login component there?", () => {
+    expect(fixture.debugElement.childNodes[0]['childNodes'][3].name).toContain('login');
   });
 
 });

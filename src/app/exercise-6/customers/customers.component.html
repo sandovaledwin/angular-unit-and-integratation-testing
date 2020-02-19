@@ -2,6 +2,9 @@
   <button mat-raised-button color="primary" (click)="add()">
     Add New Customer
   </button>
+  <button mat-raised-button (click)="logout()">
+    Logout
+  </button>
 </p>
 <table mat-table [dataSource]="customers" class="customersList">
   <ng-container matColumnDef="name">

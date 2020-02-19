@@ -47,7 +47,8 @@ describe("Service - ", () => {
 
   const angularFireAuthStub = {
     auth: {
-      signInWithEmailAndPassword: jasmine.createSpy('signInWithEmailAndPassword').and.returnValue(signInStub)
+      signInWithEmailAndPassword: jasmine.createSpy('signInWithEmailAndPassword').and.returnValue(signInStub),
+      signOut: jasmine.createSpy('signOut').and.returnValue(signInStub)
     }
   }
 
@@ -62,7 +63,7 @@ describe("Service - ", () => {
     });
 
     service = TestBed.get(Exercise6Service);
-    //angularFirestore = TestBed.get(AngularFirestore);
+
   });
 
   it('Should create an instance', () => {
@@ -79,9 +80,25 @@ describe("Service - ", () => {
     expect(docStub.delete).toHaveBeenCalled();
   });
 
+  it('successfully called getCustomers$()', () => {
+    service.getCustomers$();
+    expect(collectionStub.valueChanges).toHaveBeenCalled();
+  });
+
+  it('successfully called loadCustomers()', () => {
+    service.isLogin = true;
+    service.loadCustomers();
+    expect(collectionStub.valueChanges).toHaveBeenCalled();
+  });
+
   it('successfully called login()', () => {
     service.login(customer.email, '');
     expect(angularFireAuthStub.auth.signInWithEmailAndPassword).toHaveBeenCalled();
+  });
+
+  it('successfully called logout()', () => {
+    service.logout();
+    expect(angularFireAuthStub.auth.signOut).toHaveBeenCalled();
   });
 
 });

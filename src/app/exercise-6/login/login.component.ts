@@ -30,6 +30,7 @@ export class LoginComponent {
     ).then((result) => {
       this.authService.isLogin = true;
       this.error = null;
+      this.authService.loadCustomers();
     }).catch((error) => {
       this.authService.isLogin = false;
       this.error = error;

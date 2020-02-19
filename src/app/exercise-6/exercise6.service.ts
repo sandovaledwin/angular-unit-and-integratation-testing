@@ -11,19 +11,13 @@ export class Exercise6Service {
   displayedColumns = ['name', 'last_name', 'gender', 'status', 'email'];
   isLogin = false;
   page = 'list-customers';
+  subscription = null;
 
   constructor(
     private db: AngularFirestore,
     private afAuth: AngularFireAuth
   ) {
-      this.getCustomers$().subscribe(
-        (data) => {
-          console.log('Exercise6Service');
-          console.log(data);
-          this.customers = data;
-          this.isLogin = true;
-        }
-      );
+
   }
 
   addCustomer(customer) {
@@ -34,12 +28,36 @@ export class Exercise6Service {
     return this.db.collection('/customers').valueChanges();
   }
 
+  loadCustomers() {
+    if (this.isLogin) {
+      this.subscription = this.getCustomers$().subscribe(
+        (data) => {
+          console.log('Exercise6Service: Loading data');
+          console.log(data);
+          this.customers = data;
+          this.isLogin = true;
+        }
+      );
+    }
+  }
+
   login(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
+  logout() {
+    this.removeSubscription();
+    return this.afAuth.auth.signOut();
+  }
+
   removeCustomer(email) {
     return this.db.collection('/customers').doc(email).delete();
+  }
+
+  removeSubscription() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Exercise6Service } from '../exercise6.service';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'customers',
@@ -36,4 +37,14 @@ export class CustomersComponent {
       .catch((error) => { console.log(error) });
   }
 
+  logout() {
+    this.authService.logout()
+      .then(() => {
+        this.authService.isLogin = false;
+        this.authService.page = 'list-customers';
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  }
 }

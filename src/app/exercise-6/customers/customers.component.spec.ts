@@ -15,7 +15,8 @@ describe('CustomersComponent - ', () => {
   const exercise6ServiceStub = {
     customer: null,
     page: '',
-    removeCustomer: jasmine.createSpy('removeCustomer').and.returnValue(dataStub)
+    removeCustomer: jasmine.createSpy('removeCustomer').and.returnValue(dataStub),
+    logout: jasmine.createSpy('logout').and.returnValue(dataStub)
   }
 
   beforeEach(async(() => {
@@ -55,6 +56,11 @@ describe('CustomersComponent - ', () => {
   it("Should call removeCustomer() method?", () => {
     component.delete('test@test.com');
     expect(exercise6ServiceStub.removeCustomer).toHaveBeenCalled();
+  });
+
+  it("Should call logout() method?", () => {
+    component.logout();
+    expect(exercise6ServiceStub.logout).toHaveBeenCalled();
   });
 
 });
