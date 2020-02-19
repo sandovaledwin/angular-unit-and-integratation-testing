@@ -82,6 +82,7 @@ describe('CustomerFormComponent - ', () => {
   });
 
   it("Should save the form", async() => {
+    fixture.detectChanges();
     const inputs: Array<DebugElement> = fixture.debugElement.queryAll(By.css('input'));
     for(let i=0; i<inputs.length; i++) {
       const input = inputs[i].nativeElement as HTMLInputElement;
